@@ -1,0 +1,84 @@
+<style>
+label {
+	color: black;
+}
+
+th {
+	color: black;
+}
+
+hr {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
+	border-width: 1px;
+}
+
+h2 {
+	color: black;
+}
+</style>
+<div ng-controller="JobController" class="container">
+	<div class="imgcontainer">
+		<hr></hr>
+		<h2 align="center" color="gold">
+			<b>Job Application Form</b>
+		</h2>
+		<hr>
+		<center>
+			<img src="Images/avatar1.png" alt="Avatar" class="img-thumbnail"
+				align="middle" style="height: 40%; width: 40%">
+		</center>
+
+	</div>
+	<div>
+		<hr>
+		<table align="center">
+			<tr>
+				<th>Your Name</th>
+				<td><input type="text" required="required" name="loginname"
+					ng-model="applyjobdata.loginname" /></td>
+			</tr>
+			<tr>
+				<th>Job Id</th>
+				<td><input type="text" required="required" name="jobid"
+					ng-model="applyjobdata.jobid" /></td>
+			</tr>
+			<tr align="center">
+				<td colspan="2"><input value="Apply" class="btn btn-primary"
+					ng-click="apply()" type="submit" /></td>
+			</tr>
+		</table>
+
+	</div>
+</div>
+<hr>
+<div class="container" ng-controller="JobController">
+	<table id="table2" class="table">
+		<tr>
+			<th>Job Id</th>
+			<th>Designation</th>
+			<th>Description</th>
+			<th>Company</th>
+			<th>Salary</th>
+			<th>Location</th>
+			<th>Last Date To Apply</th>
+		</tr>
+		<tr ng-repeat="job in jobdata">
+			<td>{{job.jobid}}</td>
+			<td>{{job.desgination}}</td>
+			<td>{{job.jobdesc}}</td>
+			<td>{{job.companyname}}</td>
+			<td>{{job.salary}}</td>
+			<td>{{job.location}}</td>
+			<td>{{job.lastDateToApply}}</td>
+		</tr>
+	</table>
+</div>
+
+</div>
+<br>
+<br>
